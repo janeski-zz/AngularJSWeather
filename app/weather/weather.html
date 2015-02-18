@@ -1,0 +1,12 @@
+<div ng-controller="Weather as vm">
+    <h1>{{vm.title}}</h1>
+    <div class="container">
+    {{vm.currentWeather.main.temp}} <br />
+    {{vm.currentWeather.main.pressure}}<br />
+    {{vm.currentWeather.main.humidity}}<br />
+    {{vm.currentWeather.name}}, {{vm.currentWeather.sys.country}}<br />
+    {{vm.currentWeather.weather[0].description}}<br />
+    {{vm.currentWeather.weather[0].id}}
+    <img ng-src={{"http://openweathermap.org/img/w/"+vm.currentWeather.weather[0].icon+".png"}}>
+</div>
+</div>

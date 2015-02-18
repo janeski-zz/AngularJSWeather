@@ -4,11 +4,17 @@ module.exports = function(config){
     basePath : '../',
 
     files : [
-      '../bower_components/angular/angular.js',
+      'bower_components/angular/angular.js',
       'bower_components/angular-route/angular-route.js',
       'bower_components/angular-mocks/angular-mocks.js',
-      'app/core/**/*.js',
-      'app/weather*/**/*.js'
+        'bower_components/sinonjs/sinon.js',
+      'app/app.js',
+      'app/core/core.module.js',
+      'app/core/dataservice.js',
+      'app/weather/weather.module.js',
+      'app/weather/weather.js',
+      'unit-tests/lib/MockData.js',
+      'unit-tests/weather_test.js'
     ],
 
     reporters : ['progress'],

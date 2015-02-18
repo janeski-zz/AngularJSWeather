@@ -1,14 +1,28 @@
-'use strict';
+(function () {
+    'use strict';
 
-angular.module('myApp.view2', ['ngRoute'])
+    angular.module('app.weather').controller('Weather', Weather);
 
-.config(['$routeProvider', function($routeProvider) {
-  $routeProvider.when('/weather', {
-    templateUrl: '/weather.html',
-    controller: 'View2Ctrl'
-  });
-}])
+    Weather.$inject = ['dataservice'];
 
-.controller('View2Ctrl', [function() {
+    function Weather(dataservice) {
+        var vm = this;
+        vm.title = 'Current Weather';
+        vm.currentWeather = [];
 
-}]);
+        activate();
+
+        function activate() {
+            return getCurrentWeather().then(function() {
+
+              });
+        }
+
+        function getCurrentWeather() {
+            return dataservice.getCurrentWeather().then(function(data) {
+                vm.currentWeather = data;
+                return vm.currentWeather;
+            });
+        }
+    }
+})();

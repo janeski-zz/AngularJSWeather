@@ -1,3 +1,5 @@
-/**
- * Created by Miroslav.Janeski on 2/13/2015.
- */
+(function () {
+    'use strict';
+
+    angular.module('app.weather', []);
+})();
